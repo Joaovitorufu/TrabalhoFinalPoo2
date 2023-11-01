@@ -1,11 +1,11 @@
-package br.com.estacionamento.entities;
+package br.com.estacionamento.controllers.request;
 
-public class Veiculo {
+public class VeiculoRequest {
     private String cor;
     private String modelo;
     private String placa;
 
-    public Veiculo() {}
+    public VeiculoRequest() {}
 
     public String getCor() {
         return cor;

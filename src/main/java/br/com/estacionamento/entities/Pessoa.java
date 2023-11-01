@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 public class Pessoa {
-    String nome;
-    Date dataNasc;
-    char sexo;
+    private String nome;
+    private Date dataNasc;
+    private char sexo;
 }

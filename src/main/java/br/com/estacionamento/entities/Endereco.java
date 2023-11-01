@@ -1,11 +1,11 @@
 package br.com.estacionamento.entities;
 
 public class Endereco {
-    String rua;
-    int num;
-    String complemento;
-    String cidade;
-    String uf;
-    String CEP;
+    private String rua;
+    private int num;
+    private String complemento;
+    private String cidade;
+    private String uf;
+    private String CEP;
 
 }

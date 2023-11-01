@@ -6,5 +6,5 @@ import java.util.List;
 
 
 public class Estacionamento {
-    List<Veiculo> veiculosEstacionados = new ArrayList<Veiculo>();
+    private List<Veiculo> veiculosEstacionados = new ArrayList<Veiculo>();
 }
