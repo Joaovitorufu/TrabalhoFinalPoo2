@@ -13,6 +13,7 @@ public class EstacionamentoControllerAdapter {
         comprovanteResponse.setPlaca(comprovante.getPlaca());
         comprovanteResponse.setModelo(comprovante.getModelo());
         comprovanteResponse.setId(comprovante.getId());
+        comprovanteResponse.setNumVaga(comprovante.getNumVaga());
 
         return comprovanteResponse;
     }

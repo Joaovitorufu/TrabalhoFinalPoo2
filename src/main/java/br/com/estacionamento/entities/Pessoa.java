@@ -8,4 +8,5 @@ public class Pessoa {
     private String nome;
     private Date dataNasc;
     private char sexo;
+    private String cpf;
 }

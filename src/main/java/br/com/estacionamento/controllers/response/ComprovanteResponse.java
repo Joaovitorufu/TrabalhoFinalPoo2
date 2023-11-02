@@ -7,8 +7,17 @@ public class ComprovanteResponse {
     private String modelo;
     private String placa;
     private LocalDateTime dataEHora;
+    private int numVaga;
 
     public ComprovanteResponse() {}
+
+    public int getNumVaga() {
+        return numVaga;
+    }
+
+    public void setNumVaga(int numVaga) {
+        this.numVaga = numVaga;
+    }
 
     public int getId() {
         return id;
