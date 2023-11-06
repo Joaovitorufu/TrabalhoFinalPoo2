@@ -7,15 +7,15 @@ public class ComprovanteResponse {
     private String modelo;
     private String placa;
     private LocalDateTime dataEHora;
-    private int numVaga;
+    private long numVaga;
 
     public ComprovanteResponse() {}
 
-    public int getNumVaga() {
+    public long getNumVaga() {
         return numVaga;
     }
 
-    public void setNumVaga(int numVaga) {
+    public void setNumVaga(long numVaga) {
         this.numVaga = numVaga;
     }
 

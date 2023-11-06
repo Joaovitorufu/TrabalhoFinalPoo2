@@ -25,6 +25,6 @@ public class EstacionamentoController {
     //recebendo um veículo e devolvendo um comprovante de estacionamento.
     @PostMapping
     public ComprovanteResponse recebeVeiculo(@RequestBody VeiculoRequest veiculoRequest){
-        return adapter.map(recebeVeiculo.executar(adapter.mapRequest(veiculoRequest), 1));
+        return adapter.map(recebeVeiculo.executar(adapter.mapRequest(veiculoRequest), veiculoRequest.getIdVaga()));
     }
 }

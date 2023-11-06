@@ -1,9 +1,17 @@
 package br.com.estacionamento.entities;
 
+import jakarta.persistence.*;
+
+@Entity
 public class Veiculo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long id;
     private String cor;
     private String modelo;
     private String placa;
+
+    private long idVaga;
 
     public Veiculo() {}
 
@@ -29,5 +37,13 @@ public class Veiculo {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public long getIdVaga() {
+        return idVaga;
+    }
+
+    public void setIdVaga(long idVaga) {
+        this.idVaga = idVaga;
     }
 }

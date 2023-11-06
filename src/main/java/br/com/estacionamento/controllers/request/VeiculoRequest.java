@@ -5,6 +5,8 @@ public class VeiculoRequest {
     private String modelo;
     private String placa;
 
+    private long idVaga;
+
     public VeiculoRequest() {}
 
     public String getCor() {
@@ -29,5 +31,13 @@ public class VeiculoRequest {
 
     public void setPlaca(String placa) {
         this.placa = placa;
+    }
+
+    public long getIdVaga() {
+        return idVaga;
+    }
+
+    public void setIdVaga(long idVaga) {
+        this.idVaga = idVaga;
     }
 }
