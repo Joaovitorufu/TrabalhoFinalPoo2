@@ -10,6 +10,16 @@ public class Comprovante {
     private long numVaga;
 
 
+    public Comprovante(int id, String modelo, String placa, LocalDateTime dataEHora, long numVaga) {
+        this.id = id;
+        this.modelo = modelo;
+        this.placa = placa;
+        this.dataEHora = dataEHora;
+        this.numVaga = numVaga;
+    }
+
+
+
     public Comprovante() {}
 
 
@@ -52,4 +62,9 @@ public class Comprovante {
     public void setDataEHora(LocalDateTime dataEHora) {
         this.dataEHora = dataEHora;
     }
+
+
+
 }
+
+
