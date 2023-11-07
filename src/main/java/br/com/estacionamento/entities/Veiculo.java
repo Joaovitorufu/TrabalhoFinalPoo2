@@ -11,6 +11,16 @@ public class Veiculo {
     private String modelo;
     private String placa;
 
+    public int getPorte() {
+        return this.porte;
+    }
+
+    public void setPorte(int porte) {
+        this.porte = porte;
+    }
+
+    private int porte;
+
     private long idVaga;
 
     public Veiculo() {}

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 @Service
 public class RecebeVeiculo {
@@ -25,9 +26,21 @@ public class RecebeVeiculo {
 
         var comprovante = new Comprovante();
 
-        comprovante.setModelo(veiculo.getModelo());
-        comprovante.setPlaca(veiculo.getPlaca());
-        comprovante.setDataEHora(LocalDateTime.now());
+        if(veiculo.getPorte()==1 && numVaga <=6){
+            comprovante.setModelo(veiculo.getModelo());
+            comprovante.setPlaca(veiculo.getPlaca());
+            comprovante.setDataEHora(LocalDateTime.now());
+        }else if(veiculo.getPorte()==2 && numVaga > 6 && numVaga <=12){
+            comprovante.setModelo(veiculo.getModelo());
+            comprovante.setPlaca(veiculo.getPlaca());
+            comprovante.setDataEHora(LocalDateTime.now());
+        }else if(veiculo.getPorte()==3 && numVaga >12 && numVaga <=18){
+            comprovante.setModelo(veiculo.getModelo());
+            comprovante.setPlaca(veiculo.getPlaca());
+            comprovante.setDataEHora(LocalDateTime.now());
+        }
+
+
 
         if(verificaVaga(numVaga)) {
             throw new VagaOcupadaException();
@@ -54,6 +67,17 @@ public class RecebeVeiculo {
                     vagaRepository.save(vaga);
                     return vaga;
                 });
+    }
+
+
+    //verificar
+    private ArrayList<Integer> vagasOcupadas(long numVaga){
+        var vaga = verificaVaga(numVaga);
+        ArrayList<Integer> vagasOcupadas  = new ArrayList<Integer>();
+        if(vaga == true){
+           vagasOcupadas.add((int)numVaga);
+        }
+        return vagasOcupadas;
     }
 
 }

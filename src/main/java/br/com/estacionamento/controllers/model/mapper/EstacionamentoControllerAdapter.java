@@ -5,6 +5,9 @@ import br.com.estacionamento.controllers.response.ComprovanteResponse;
 import br.com.estacionamento.entities.Comprovante;
 import br.com.estacionamento.entities.Veiculo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class EstacionamentoControllerAdapter {
 
     public ComprovanteResponse map(Comprovante comprovante){
@@ -24,6 +27,11 @@ public class EstacionamentoControllerAdapter {
         veiculo.setPlaca(veiculoRequest.getPlaca());
         veiculo.setModelo(veiculoRequest.getModelo());
 
+        //arrumar para os diversos tipos de veiculos
+
+
+        List<Veiculo> veiculos = new ArrayList<>();
+        veiculos.add(veiculo);
         return veiculo;
     }
 }

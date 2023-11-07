@@ -6,6 +6,15 @@ public class VeiculoRequest {
     private String placa;
 
     private long idVaga;
+    private int porte;
+
+    public int getPorte() {
+        return porte;
+    }
+
+    public void setPorte(int porte) {
+        this.porte = porte;
+    }
 
     public VeiculoRequest() {}
 

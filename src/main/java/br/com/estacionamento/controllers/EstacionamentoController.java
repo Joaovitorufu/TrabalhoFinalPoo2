@@ -27,4 +27,6 @@ public class EstacionamentoController {
     public ComprovanteResponse recebeVeiculo(@RequestBody VeiculoRequest veiculoRequest){
         return adapter.map(recebeVeiculo.executar(adapter.mapRequest(veiculoRequest), veiculoRequest.getIdVaga()));
     }
+
+
 }

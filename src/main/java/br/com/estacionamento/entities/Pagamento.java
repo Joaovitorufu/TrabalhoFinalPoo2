@@ -27,7 +27,7 @@ public class Pagamento {
     }
 
     public void realizaPagamento(PagamentoStrategy stratregy){
-        //LocalDateTime test = LocalDateTime.of(2023,11,6,10,0);
+        //LocalDateTime test = LocalDateTime.of(2023,11,7,1,0);
         //Comprovante comprovante = new Comprovante(1,"palio","aisj12",test,1);
         double total = calculaTotal(comprovante);
         stratregy.pagar(total);
@@ -35,10 +35,11 @@ public class Pagamento {
 
 
     //test
+
     /*
     public static void main(String[] args) {
         Pagamento pag = new Pagamento();
-        LocalDateTime test = LocalDateTime.of(2023,11,6,10,0);
+        //LocalDateTime test = LocalDateTime.of(2023,11,7,1,0);
         Comprovante comprovante = new Comprovante(1,"palio","aisj12",test,1);
         pag.calculaTotal(comprovante);
 
@@ -46,6 +47,6 @@ public class Pagamento {
         pag.realizaPagamento(strategy);
 
     }
-*/
 
+*/
 }
