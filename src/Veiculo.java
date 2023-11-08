@@ -1,4 +1,4 @@
-public class Veiculo {
+public abstract class Veiculo {
 
     private String cor;
     private String modelo;
@@ -54,4 +54,7 @@ public class Veiculo {
     public void setIdVaga(Integer idVaga) {
         this.idVaga = idVaga;
     }
+
+    //visitor
+    public abstract void accept (Visitor v);
 }

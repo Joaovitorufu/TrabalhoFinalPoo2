@@ -41,21 +41,23 @@ public class Menu {
                 pagamento.realizaPagamento(credito);
             }
             if (y==2){
-                PagamentoStrategy debito = new PagamentoCartaoCredito();
+                PagamentoStrategy debito = new PagamentoCartaoDebito();
                 pagamento.realizaPagamento(debito);
             }
             if (y==3){
-                PagamentoStrategy dinheiro = new PagamentoCartaoCredito();
+                PagamentoStrategy dinheiro = new PagamentoDinheiro();
                 pagamento.realizaPagamento(dinheiro);
             }
             if (y==4){
-                PagamentoStrategy pix = new PagamentoCartaoCredito();
+                PagamentoStrategy pix = new PagamentoPix();
                 pagamento.realizaPagamento(pix);
             }
         }
         if(x==4){
 
         }
+
+
 
 
     }
