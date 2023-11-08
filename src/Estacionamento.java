@@ -5,10 +5,29 @@ import java.util.List;
 import java.util.Scanner;
 
 
-public class Estacionamento {
+public class Estacionamento implements Sujeito{
     private List<Veiculo> veiculosEstacionados;
     private List<Integer> vagasDisponiveis;
     private List<Comprovante> comprovantes = new ArrayList<>();
+    private List<Observer> observers;
+
+    @Override
+    public void addObserver(Observer obs) {
+        observers.add(obs);
+    }
+
+    @Override
+    public void removeObserver(Observer obs) {
+        observers.remove(obs);
+    }
+
+    @Override
+    public void notifyObserver() {
+
+        for(Observer o : observers){
+            o.update(vagasDisponiveis);
+        }
+    }
 
     public Estacionamento() {
         veiculosEstacionados = new ArrayList<>();
@@ -16,13 +35,17 @@ public class Estacionamento {
         for (int i = 1; i <= 12; i++) {
             vagasDisponiveis.add(i);
         }
+        observers = new ArrayList<Observer>();
     }
 
     public void estacionarVeiculo(Veiculo v){
+        boolean vagaDisponivelParaEstacionar = vagasDisponiveis.remove(v.getIdVaga());
+        if (!vagaDisponivelParaEstacionar || v.getIdVaga() > 12 || v.getIdVaga() < 0){
+            System.out.println("Vaga indisponível para estacionar");
+            return;
+        }
         veiculosEstacionados.add(v);
-        vagasDisponiveis.remove(v.getIdVaga());
-        //NotifyObserver;
-
+        notifyObserver();
     }
 
     public void removerVeiculo(Integer IdVaga){
