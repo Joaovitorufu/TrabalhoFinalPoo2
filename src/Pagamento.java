@@ -23,14 +23,10 @@ public class Pagamento {
         }else{
             total = taxaMinima + (horas * horaAdicional);
         }
-
-        //System.out.println(total);
         return total;
     }
 
     public void realizaPagamento(PagamentoStrategy stratregy){
-        //LocalDateTime test = LocalDateTime.of(2023,11,6,10,0);
-        //Comprovante comprovante = new Comprovante(1,"palio","aisj12",test,1);
         double total = calculaTotal(comprovante);
         stratregy.pagar(total);
     }

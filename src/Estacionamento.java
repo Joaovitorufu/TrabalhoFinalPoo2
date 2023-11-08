@@ -10,6 +10,7 @@ public class Estacionamento implements Sujeito{
     private List<Integer> vagasDisponiveis;
     private List<Comprovante> comprovantes = new ArrayList<>();
     private List<Observer> observers;
+    private PrintVIsitor printer;
 
     @Override
     public void addObserver(Observer obs) {
@@ -32,6 +33,7 @@ public class Estacionamento implements Sujeito{
     public Estacionamento() {
         veiculosEstacionados = new ArrayList<>();
         vagasDisponiveis = new ArrayList<>();
+        printer = new PrintVIsitor();
         for (int i = 1; i <= 12; i++) {
             vagasDisponiveis.add(i);
         }
@@ -41,7 +43,7 @@ public class Estacionamento implements Sujeito{
     public void estacionarVeiculo(Veiculo v){
         boolean vagaDisponivelParaEstacionar = vagasDisponiveis.remove(v.getIdVaga());
         if (!vagaDisponivelParaEstacionar || v.getIdVaga() > 12 || v.getIdVaga() < 0){
-            System.out.println("Vaga indisponível para estacionar");
+            System.out.println("Vaga indisponível para estacionar\n");
             return;
         }
         veiculosEstacionados.add(v);
@@ -154,5 +156,11 @@ public class Estacionamento implements Sujeito{
             }
         }
         throw new IllegalArgumentException("Veiculo nao encontrado!");
+    }
+
+    public void mostrarVeiculos(){
+        for(Veiculo v : veiculosEstacionados){
+            v.accept(printer);
+        }
     }
 }

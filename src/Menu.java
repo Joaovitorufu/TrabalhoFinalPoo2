@@ -52,9 +52,11 @@ public class Menu {
                 PagamentoStrategy pix = new PagamentoPix();
                 pagamento.realizaPagamento(pix);
             }
+            menuInicial();
         }
         if(x==4){
-
+            estacionamento.mostrarVeiculos();
+            menuInicial();
         }
 
 
