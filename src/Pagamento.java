@@ -3,9 +3,9 @@ import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 
 public class Pagamento {
-    Comprovante comprovante;
-    double taxaMinima;
-    double horaAdicional;
+    private Comprovante comprovante;
+    private double taxaMinima;
+    private double horaAdicional;
 
     public Pagamento(Comprovante comprovante) {
         this.comprovante = comprovante;

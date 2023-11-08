@@ -8,7 +8,7 @@ import java.util.Scanner;
 public class Estacionamento {
     private List<Veiculo> veiculosEstacionados;
     private List<Integer> vagasDisponiveis;
-    private List<Comprovante> comprovantes;
+    private List<Comprovante> comprovantes = new ArrayList<>();
 
     public Estacionamento() {
         veiculosEstacionados = new ArrayList<>();
@@ -21,7 +21,7 @@ public class Estacionamento {
     public void estacionarVeiculo(Veiculo v){
         veiculosEstacionados.add(v);
         vagasDisponiveis.remove(v.getIdVaga());
-        NotifyObserver;
+        //NotifyObserver;
 
     }
 

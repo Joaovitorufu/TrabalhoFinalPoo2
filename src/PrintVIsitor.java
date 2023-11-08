@@ -11,6 +11,7 @@ public class PrintVIsitor implements Visitor{
     public void visit(GrandePorte g) {
         System.out.println("Dados do Veiculo de grande porte");
         //coloca aqui os dados que quer printar
+        g.getQtdLugares();
 
     }
 
