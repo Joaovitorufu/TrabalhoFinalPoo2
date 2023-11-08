@@ -83,13 +83,19 @@ public class Estacionamento implements Sujeito{
         int vaga = scanner.nextInt();
 
         if (porte.equals("p")){
-            return new Motocicleta(cor,modelo,placa,vaga,proprietario);
+            System.out.println("Quantidade de Capacetes:");
+            int qtdCapacetes = scanner.nextInt();
+            return new Motocicleta(cor,modelo,placa,vaga,proprietario,qtdCapacetes);
         }
         if (porte.equals("m")){
-            return new Carro(cor,modelo,placa,vaga,proprietario);
+            System.out.println("Quantidade de Portas:");
+            int qtdPortas = scanner.nextInt();
+            return new Carro(cor,modelo,placa,vaga,proprietario,qtdPortas);
         }
         if (porte.equals("g")){
-            return new GrandePorte(cor,modelo,placa,vaga,proprietario);
+            System.out.println("Quantidade de Lugares:");
+            int qtdLugares = scanner.nextInt();
+            return new GrandePorte(cor,modelo,placa,vaga,proprietario,qtdLugares);
         }else {
             throw new IllegalArgumentException("Porte inválido. Escolha 'p', 'm' ou 'g'.");
         }

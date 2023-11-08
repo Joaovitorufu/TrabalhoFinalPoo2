@@ -1,6 +1,11 @@
 public class GrandePorte extends Veiculo{
 
-    private int qtdLugares = 45;
+    private int qtdLugares;
+
+    public GrandePorte(String cor, String modelo, String placa, Integer idVaga, PessoaTemplate proprietario, int qtdLugares) {
+        super(cor, modelo, placa, idVaga, proprietario);
+        this.qtdLugares = qtdLugares;
+    }
 
     public int getQtdLugares() {
         return qtdLugares;
@@ -8,10 +13,6 @@ public class GrandePorte extends Veiculo{
 
     public void setQtdLugares(int qtdLugares) {
         this.qtdLugares = qtdLugares;
-    }
-
-    public GrandePorte(String cor, String modelo, String placa, Integer idVaga, PessoaTemplate proprietario) {
-        super(cor, modelo, placa, idVaga, proprietario);
     }
 
     @Override
